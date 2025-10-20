@@ -198,6 +198,6 @@ This project is created for educational purposes as part of the PLP Academy curr
 
 ---
 
-**Deployed URL**: [Add your deployment URL here]
+**Deployed URL**: [vercel](https://frontend-react-two-gamma.vercel.app)
 
 **Last Updated**: October 2025
