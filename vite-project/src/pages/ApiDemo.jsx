@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import Button from '../components/Button';
 
@@ -19,7 +19,7 @@ const ApiDemo = () => {
         setPosts(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to fetch posts');
         setLoading(false);
       });
@@ -41,15 +41,15 @@ const ApiDemo = () => {
       />
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
-      <ul className="divide-y divide-gray-200">
+      <ul className="divide-y divide-gray-200 dark:divide-gray-700">
         {filteredPosts.map(post => (
           <li key={post.id} className="py-2">
             <span className="font-semibold">{post.title}</span>
-            <p className="text-gray-500 text-sm">{post.body}</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">{post.body}</p>
           </li>
         ))}
       </ul>
-      <div className="flex gap-2 mt-4">
+      <div className="flex gap-2 mt-4 items-center">
         <Button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>Prev</Button>
         <span>Page {page}</span>
         <Button onClick={() => setPage(p => p + 1)}>Next</Button>
